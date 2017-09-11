@@ -1,0 +1,82 @@
+* {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-family: "Quicksand", "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.header-outer {
+  background-color: #b0212c;
+  width: 100%;
+  height: 8em;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logo {
+  height: 6em;
+  margin: 1em;
+}
+
+.header-links {
+  height: 100%;
+  width: 60vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-links > a {
+  color: #fff;
+  font-family: "Quicksand", "Open Sans", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  font-size: 1.5em;
+  margin: 0 1em;
+  opacity: 0.9;
+  position: relative;
+  transition: opacity 0.25s;
+  -webkit-transition: opacity 0.25s;
+}
+
+.header-links > a::after {
+  content: "";
+  background-color: #fff;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform-origin: left center;
+  -webkit-transform-origin: left center;
+  transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+  transition: transform 0.25s;
+  -webkit-transition: transform 0.25s;
+}
+
+.header-links > a:hover::after {
+  transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+}
+
+.header-links > a:hover {
+  opacity: 1;
+}
+
+.header-links > a:last-child {
+  margin-right: 2em;
+}
+
+.container-fluid {
+  margin: 0;
+}
