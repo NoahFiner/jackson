@@ -13,6 +13,7 @@ body {
 }
 
 .header-outer {
+  z-index: 10;
   background-color: #b0212c;
   width: 100%;
   height: 8em;
@@ -21,6 +22,21 @@ body {
   padding: 0;
   display: flex;
   justify-content: space-between;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.25s, background-color 0.25s, height 0.25s;
+  -webkit-transition: box-shadow 0.25s, background-color 0.25s, height 0.25s;
+}
+
+.header-outer.transparent {
+  height: 12em;
+  background-color: transparent;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+50,000000+100&0.65+1,0.3+61,0+100 */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 1%, rgba(0,0,0,0.36) 50%, rgba(0,0,0,0.3) 61%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 1%,rgba(0,0,0,0.36) 50%,rgba(0,0,0,0.3) 61%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 1%,rgba(0,0,0,0.36) 50%,rgba(0,0,0,0.3) 61%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+  box-shadow: none;
 }
 
 .header-logo {
@@ -29,7 +45,7 @@ body {
 }
 
 .header-links {
-  height: 100%;
+  height: 8em;
   width: 60vw;
   display: flex;
   justify-content: flex-end;
@@ -41,7 +57,7 @@ body {
   font-family: "Quicksand", "Open Sans", Helvetica, Arial, sans-serif;
   text-decoration: none;
   font-size: 1.5em;
-  margin: 0 1em;
+  margin: 0 1.5em;
   opacity: 0.9;
   position: relative;
   transition: opacity 0.25s;
@@ -74,9 +90,239 @@ body {
 }
 
 .header-links > a:last-child {
-  margin-right: 2em;
+  margin-right: 3em;
+}
+
+.img-header {
+  height: 90vh;
+  width: 100%;
+  margin: 0;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-fixed {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-image: url('img/honest-22.jpg');
+  background-size: 125% auto;
+  background-position: 30% 50%;
+}
+
+#title {
+  line-height: 1.4;
+  padding: 0.25em 0;
+  width: 45%;
+  text-align: left;
+  font-size: 4rem;
+  margin-top: 15rem;
+}
+
+#title > span {
+  font-family: "Quicksand", "Open Sans", Helvetica, Arial, sans-serif;
+  background-color: transparent;
+  color: #b0212c;
+  display: inline;
+  padding: 0.75rem;
+  padding-left: 0.45em;
+  padding-right: 0.45em;
+  /* Needs prefixing */
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+#title-hr {
+  width: 20%;
+  margin: 0 0 2rem 2rem;
+  height: 2px;
+  background-color: #b0212c;
+}
+
+#title-button {
+  font-size: 1.5em;
+  margin: 0 0 3rem 2rem;
+  border: 1px solid #b0212c;
+  color: #b0212c;
+}
+
+#title-button:hover {
+  background-color: rgba(176,33,44,0.1);
 }
 
 .container-fluid {
   margin: 0;
+  background-color: #b0212c;
+}
+
+.text-row {
+  background-color: #b0212c;
+  padding-top: 10rem;
+}
+
+.donate-button-outer {
+  height: auto;
+  width: 100%;
+  margin: 0 0 10rem 0;
+  text-align: center;
+}
+
+.donate-button-outer > p {
+  color: #fff;
+  font-size: 2em;
+  width: 100%;
+}
+
+.button {
+  display: inline-block;
+  background-color: transparent;
+  padding: 0.25em 0.5em;
+  font-size: 2em;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Quicksand", "Open Sans", Helvetica, Arial, sans-serif;
+  margin: 1rem auto;
+  transition: background-color 0.25s;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  color: #fff;
+}
+
+.left {
+  color: #fff;
+  text-align: right;
+}
+
+.left > h1 {
+  font-size: 4em;
+  margin: 0.5em;
+}
+
+.right {
+  color: #fff;
+}
+
+.right > p {
+  font-size: 1.5em;
+  line-height: 1.6;
+  margin: 0 2em 0 0.5em;
+}
+
+.fancy-hr {
+  width: 60%;
+  margin: 10rem auto;
+  height: 1px;
+  background-color: #fff;
+}
+
+.img-divider-outer {
+  padding: 0;
+}
+
+.img-divider {
+  height: 22.222vw;
+  overflow: hidden;
+  margin: 10rem 0;
+}
+
+.img-divider > .col-md-3 {
+  height: 100%;
+  background-size: cover;
+  background-position: 0 25%;
+}
+
+.img-divider-1 > .col-md-3:nth-child(1) {
+  background-image: url('img/honest-4.jpg')
+}
+.img-divider-1 > .col-md-3:nth-child(2) {
+  background-image: url('img/IMG_0336.jpg')
+}
+.img-divider-1 > .col-md-3:nth-child(3) {
+  background-image: url('img/honest-1.jpg')
+}
+.img-divider-1 > .col-md-3:nth-child(4) {
+  background-image: url('img/IMG_0455.jpg')
+}
+
+.footer {
+  background-color: #891A23;
+  height: 20rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+}
+
+#footer-logo {
+  height: 10rem;
+  width: auto;
+  margin: 2rem;
+}
+
+.footer-right > a {
+  color: #fff;
+  font-family: "Quicksand", "Open Sans", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  display: block;
+  font-size: 1.5em;
+  margin: 0 1.5em;
+  opacity: 0.9;
+  position: relative;
+  transition: opacity 0.25s;
+  -webkit-transition: opacity 0.25s;
+}
+
+.footer-right > a > img {
+  height: 1.25em;
+  margin-bottom: 0.25em;
+  width: auto;
+}
+
+.footer-right > a::after {
+  content: "";
+  background-color: #fff;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform-origin: left center;
+  -webkit-transform-origin: left center;
+  transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+  transition: transform 0.25s;
+  -webkit-transition: transform 0.25s;
+}
+
+.footer-right > a:hover::after {
+  transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+}
+
+.footer-right > a:hover {
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .img-fixed {
+    background-size: cover;
+    background-position: 0% 100%;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  #title {
+    padding: 0.25em 0;
+    width: 60vh;
+    font-size: 2.5em;
+  }
 }
