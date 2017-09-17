@@ -1,3 +1,12 @@
+html, body {
+  width: 100vw;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 * {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
@@ -10,6 +19,16 @@ body {
   background-color: #fff;
   margin: 0;
   padding: 0;
+}
+
+.full-relative {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#hamburger-outer {
+  display: none;
 }
 
 .header-outer {
@@ -30,10 +49,10 @@ body {
 .header-outer.transparent {
   height: 12em;
   background-color: transparent;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+50,000000+100&0.65+1,0.3+61,0+100 */
-  background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 1%, rgba(0,0,0,0.36) 50%, rgba(0,0,0,0.3) 61%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 1%,rgba(0,0,0,0.36) 50%,rgba(0,0,0,0.3) 61%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 1%,rgba(0,0,0,0.36) 50%,rgba(0,0,0,0.3) 61%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+41,000000+100&0.65+1,0.3+54,0+100 */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 1%, rgba(0,0,0,0.39) 41%, rgba(0,0,0,0.3) 54%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 1%,rgba(0,0,0,0.39) 41%,rgba(0,0,0,0.3) 54%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 1%,rgba(0,0,0,0.39) 41%,rgba(0,0,0,0.3) 54%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 
   box-shadow: none;
@@ -54,6 +73,7 @@ body {
 
 .header-links > a {
   color: #fff;
+  white-space: pre;
   font-family: "Quicksand", "Open Sans", Helvetica, Arial, sans-serif;
   text-decoration: none;
   font-size: 1.5em;
@@ -202,7 +222,7 @@ body {
 
 .left > h1 {
   font-size: 4em;
-  margin: 0.5em;
+  margin: 0.5rem;
 }
 
 .right {
@@ -212,7 +232,7 @@ body {
 .right > p {
   font-size: 1.5em;
   line-height: 1.6;
-  margin: 0 2em 0 0.5em;
+  margin: 0 0.5rem;
 }
 
 .fancy-hr {
@@ -272,11 +292,15 @@ body {
   text-decoration: none;
   display: block;
   font-size: 1.5em;
-  margin: 0 1.5em;
+  margin: 0.5em 1.5em;
   opacity: 0.9;
   position: relative;
   transition: opacity 0.25s;
   -webkit-transition: opacity 0.25s;
+}
+
+.footer-right > a > span {
+  font-family: "Quicksand", "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 .footer-right > a > img {
@@ -324,5 +348,108 @@ body {
     padding: 0.25em 0;
     width: 60vh;
     font-size: 2.5em;
+  }
+}
+
+@media (max-width: 750px) {
+  .footer-right > a > span {
+    display: none;
+  }
+
+  .right > p {
+    font-size: 1em;
+  }
+
+  .header-outer.expanded {
+    background-color: rgba(176,33,44,0.5);
+  }
+
+  .header-links {
+    width: 100vw;
+    display: block;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    position: absolute;
+    top: 8em;
+    z-index: 1000;
+    height: auto;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.25s;
+    -webkit-transition: max-height 0.25s;
+  }
+
+  .header-links.expanded {
+    max-height: 24rem;
+  }
+
+  .header-links > a {
+    width: 100%;
+    display: block;
+    white-space: normal;
+    height: 8rem;
+    line-height: 8rem;
+    vertical-align: middle;
+    background-color: #891A23;
+    font-size: 4rem;
+    margin-left: 0rem;
+    padding-left: 0.75em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .header-links > a:last-of-type {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  #hamburger-outer {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 2rem;
+    top: 1.5rem;
+    height: 8rem;
+    width: 8rem;
+  }
+
+  .burger {
+    height: 2px;
+    width: 80%;
+    left: 10%;
+    position: absolute;
+    background-color: #fff;
+    transform: translateX(0) rotate(0deg);
+    -webkit-transform: translateX(0) rotate(0deg);
+    transition: transform 0.25s, top 0.25s, left 0.25s;
+    -webkit-transition: transform 0.25s, top 0.25s, left 0.25s;
+  }
+
+  #burger1 {
+    top: 25%;
+    transform-origin: center left;
+  }
+
+  #burger2 {
+    top: 50%;
+    transform-origin: center center;
+  }
+
+  #burger3 {
+    top: 75%;
+    transform: center right;
+  }
+
+  #hamburger-outer.expanded > div > #burger1 {
+    top: 20%;
+    left: 20%;
+    transform: translateX(0) rotate(45deg);
+  }
+  #hamburger-outer.expanded > div > #burger2 {
+    top: 50%;
+    transform: translateX(0) rotate(45deg);
+  }
+  #hamburger-outer.expanded > div > #burger3 {
+    top: 50%;
+    transform: translateX(0) rotate(-45deg);
   }
 }
