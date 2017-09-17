@@ -397,6 +397,10 @@ body {
     margin: 0.5em;
   }
 
+  .footer-right > p {
+    display: none;
+  }
+
   .footer-right > a::after {
     display: none !important;
   }
