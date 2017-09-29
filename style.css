@@ -363,6 +363,11 @@ body {
   flex-wrap: nowrap;
 }
 
+#tax-id {
+  width: auto;
+  white-space: pre;
+}
+
 #footer-logo {
   height: 10rem;
   width: auto;
@@ -550,6 +555,11 @@ body {
 
   .container-fluid.white.padding {
     padding: 3rem;
+  }
+
+  .text-row p {
+    font-size: 1.2em !important;
+    width: 100%;
   }
 
   .text-row img {
