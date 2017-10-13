@@ -246,11 +246,15 @@ body {
   color: #b0212c;
 }
 
-.donate-button-outer {
+.donate-button-outer, .contact-outer {
   height: auto;
   width: 80%;
   margin: 0 10% 10rem 10%;
   text-align: center;
+}
+
+.contact-outer > p > a {
+  color: #b0212c;
 }
 
 .donate-button-outer > p {
